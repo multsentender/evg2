@@ -1,0 +1,17 @@
+@mixin transform ($property) {
+    transform: $property;
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    -o-transform: $property;
+}
+
+@mixin font-face ($font-family, $path, $weight: 400, $style: normal) {
+    @font-face {
+        font-family: $font-family;
+        font-weight: $weight;
+        font-style: $style;
+        font-stretch: normal;
+        unicode-range: U+0020-2044;
+        src: url('./fonts/#{$font-family}-#{$path}.ttf');
+    }
+}
