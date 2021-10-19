@@ -7,7 +7,7 @@ const Header = () => {
     const scrollToTop = () => scroll.scrollToTop();
 
     return (
-        <header>
+        <header className='scrolled'>
             <div className="container">
                 <div className="logo">
                     <img src={logo} alt="Viva-logotype" />
