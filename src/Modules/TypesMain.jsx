@@ -23,7 +23,7 @@ const Main = () => {
                 <div id='types' className="types">
                     <div className="types--item">
                         <div className="types--item_image">
-                            <img src={testImage} alt="image types of job" />
+                            <img src={testImage} alt="types of job" />
                         </div>
                         <div className="types--item_description dc_1">
                             <b>Тёмное перевоплощение</b>
@@ -32,7 +32,7 @@ const Main = () => {
                     </div>
                     <div className="types--item">
                         <div className="types--item_image">
-                            <img src={testImage} alt="image types of job" />
+                            <img src={testImage} alt="types of job" />
                         </div>
                         <div className="types--item_description dc_2">
                             <b>Гнустное предательство</b>
@@ -41,7 +41,7 @@ const Main = () => {
                     </div>
                     <div className="types--item">
                         <div className="types--item_image">
-                            <img src={testImage} alt="image types of job" />
+                            <img src={testImage} alt="types of job" />
                         </div>
                         <div className="types--item_description dc_3">
                             <b>Угольное восстание</b>

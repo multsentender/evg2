@@ -32,8 +32,12 @@
         color: #fff;
     }
 }
-.bg-container_2{
+.bg-scrolled{
     height: 100vh !important;    
+    background-image: url(../assets/image/bg_2.png) !important;
+    .container{
+        opacity: 0;
+    }
 }
 main{
     width: 100%;

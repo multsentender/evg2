@@ -1,6 +1,7 @@
 import React from "react"
+import classNames from "classnames";
 
-import {Header, TypesMain} from './Modules'
+import {Header, TypesMain, OtherMain} from './modules'
 
 function App() {
   const [offset, setOffset] = React.useState(0);
@@ -9,16 +10,17 @@ function App() {
       setOffset(window.pageYOffset)
     }
   }, [])
-  console.log(offset)
+  
   return (
     <div className="App">
-      <Header/>
-      <div className="bg-container">
+      <Header offset={offset}/>
+      <div className={classNames('bg-container', {'bg-scrolled': offset>=750})}>
         <div className="container">
           <h2>В 2021 году великий маг Всеросии увёл войско за ворота.</h2>
         </div>
       </div>
       <TypesMain/>
+      <OtherMain/>
     </div>
   );
 }

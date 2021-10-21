@@ -1,15 +1,16 @@
+import classNames from 'classnames';
 import React from 'react'
 import {Link, animateScroll as scroll} from 'react-scroll'
 
 import logo from '../assets/icon/logo.svg'
 
-const Header = () => {
+const Header = ({offset}) => {
     const scrollToTop = () => scroll.scrollToTop();
 
     return (
-        <header className='scrolled'>
+        <header className={classNames({'scrolled': offset>=50})}>
             <div className="container">
-                <div className="logo">
+                <div className="logo" onClick={scrollToTop}>
                     <img src={logo} alt="Viva-logotype" />
                     <h1>Вива Металл</h1>
                 </div>
