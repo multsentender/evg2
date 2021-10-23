@@ -28,6 +28,71 @@
     width: 100%;
     color: $white;
     padding: 20px 0 60px;
+    position: relative;
+    .services-dots{
+        position: absolute;
+        left: -30px;
+        bottom: 40px;
+        padding: 6px 10px;
+        background-color: #fff;
+        border-radius: 3px;
+        li{
+            text-decoration: none;
+            width: 22px;
+            height: 22px;
+            margin: 13px 5px;
+            position: relative;
+            transition: all .45s linear;
+        }
+        .slick-active{
+            transform: scale(1.3);
+        }
+        button{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-indent: 100%;
+            width: 70%;
+            height: 70%;
+            border: none;
+            border-radius: 0;
+            background-color: $accent;
+            transform: translate(-50%, -50%) rotate(45deg);
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.45);
+        }
+    }
+    .slick-arrow{
+        position: absolute;
+        top: 50%;
+        width: 60px;
+        height: 60px;
+        background: $accent !important;
+        z-index: 1;
+        img{
+            width: 70%;
+            height: 70%;
+        }
+        &::before{
+            content: '';
+        }
+    }
+    .slick-prev{
+        left: 0;
+        @include transform(translate(-50%, -50%) rotate(135deg));
+        img{
+            @include transform(translate(50%, 50%) rotate(-45deg));
+        }
+    }
+    .slick-next{
+        right: 0;
+        @include transform(translate(50%, -50%) rotate(-45deg));
+        img{
+            @include transform(translate(50%, 50%) rotate(-45deg));
+        }
+    }
 }
 .services--item{
     height: 80vh;
@@ -45,12 +110,17 @@
         border-radius: 0 12px 12px 0;
         background-color: $dark;
         opacity: 0.7;
-        padding: 50px 24px 35px;
+        padding: 50px 24px 35px 40px;
         box-shadow: 8px 0 12px #232225cc;
         h5{
             font-size: 42px;
             letter-spacing: 5px;
             margin: 50px 0 20px;
+        }
+        p{
+            font-size: 20px;
+            letter-spacing: 1px;
+            line-height: 30px;
         }
     }
 }

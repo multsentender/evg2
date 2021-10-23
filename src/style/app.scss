@@ -13,18 +13,19 @@
 
 .bg-container{
     width: 100%;
-    height: 74vh;
+    height: 100vh;
+    padding-bottom: 26vh;
     position: fixed;
     top: 0;
     left: 0;
-    background-image: url(../assets/image/bg_1.jpg);
+    background-image: url(../assets/image/bg_1.jpg), url(../assets/image/bg_2.png);
     background-position: 65% 40%;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
     h2{
         position: absolute;
-        top: 55%;
+        top: 45%;
         @include transform(translateY(-55%));
         display: inline-block;
         width: 40%;
@@ -33,8 +34,7 @@
     }
 }
 .bg-scrolled{
-    height: 100vh !important;    
-    background-image: url(../assets/image/bg_2.png) !important;
+    background-image: url(../assets/image/bg_2.png), url(../assets/image/bg_1.jpg) !important;
     .container{
         opacity: 0;
     }
