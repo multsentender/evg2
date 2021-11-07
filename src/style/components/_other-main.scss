@@ -36,6 +36,7 @@
         padding: 6px 10px;
         background-color: #fff;
         border-radius: 3px;
+        z-index: 2;
         li{
             text-decoration: none;
             width: 22px;
@@ -55,8 +56,8 @@
             overflow: hidden;
             white-space: nowrap;
             text-indent: 100%;
-            width: 70%;
-            height: 70%;
+            width: 60%;
+            height: 60%;
             border: none;
             border-radius: 0;
             background-color: $accent;
@@ -67,10 +68,10 @@
     .slick-arrow{
         position: absolute;
         top: 50%;
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         background: $accent !important;
-        z-index: 1;
+        z-index: 2;
         img{
             width: 70%;
             height: 70%;
@@ -81,14 +82,14 @@
     }
     .slick-prev{
         left: 0;
-        @include transform(translate(-50%, -50%) rotate(135deg));
+        @include transform(translate(calc(-50% + 2px), -50%) rotate(135deg));
         img{
             @include transform(translate(50%, 50%) rotate(-45deg));
         }
     }
     .slick-next{
         right: 0;
-        @include transform(translate(50%, -50%) rotate(-45deg));
+        @include transform(translate(calc(50% - 2px), -50%) rotate(-45deg));
         img{
             @include transform(translate(50%, 50%) rotate(-45deg));
         }
@@ -97,7 +98,7 @@
 .services--item{
     height: 80vh;
     width: 100%;
-    background-color: rgb(255, 190, 190);
+    background-color: $dark;
     position: relative;
     border-radius: 3px;
     overflow: hidden;
@@ -108,10 +109,12 @@
         height: 100%;
         width: 42%;
         border-radius: 0 12px 12px 0;
-        background-color: $dark;
-        opacity: 0.7;
-        padding: 50px 24px 35px 40px;
+        background-color: rgba(221, 221, 221, 0.7);
+        padding: 2.2rem 1rem 2rem 2.9rem;
         box-shadow: 8px 0 12px #232225cc;
+        color: $dark;
+        z-index: 1;
+        backdrop-filter: blur(8px);
         h5{
             font-size: 42px;
             letter-spacing: 5px;
@@ -121,6 +124,31 @@
             font-size: 20px;
             letter-spacing: 1px;
             line-height: 30px;
+        }
+    }
+    &_gallery{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        & div{
+            height: 100%;
+            display: block;
+            position: relative;
+            .slick-track div{
+                height: 100%;
+            }
+        }
+        .gallery--item{
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 }

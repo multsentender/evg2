@@ -1,0 +1,17 @@
+[
+    {
+        "title": "first",
+        "description": "Что-то зачем-то когда-то",
+        "path": "first"
+    },
+    {
+        "title": "second",
+        "description": "ты будешь мёртв вчера",
+        "path": "second"
+    },
+    {
+        "title": "third",
+        "description": "почему ты всё ещё здесь?",
+        "path": "third"
+    }
+]

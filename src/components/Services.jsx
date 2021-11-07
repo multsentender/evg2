@@ -1,7 +1,14 @@
 import React from 'react'
 import Slider from 'react-slick'
+import axios from 'axios'
+import { ServiceItem } from '.'
+
 
 import arrow from '../assets/icon/arrow.svg'
+
+const getAll = (r) => {
+    return r.keys().map(r);
+}
 
 const ArrowBtn = ({className, style, onClick}) => {
     return (
@@ -21,66 +28,55 @@ const Services = () => {
       speed: 800,
       slidesToShow: 1,
       slidesToScroll: 1,
+      lazyLoad: false,
       dotsClass: "services-dots",
       vertical: true,
       verticalSwiping: true,
       prevArrow: <ArrowBtn/>,
       nextArrow: <ArrowBtn/>
     };
-    const settingsGallery = {
-      dots: true,
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      lazyLoad: true,
-      autoplay: true,
-      speed: 600,
-      autoplaySpeed: 1000,
-      pauseOnDotsHover: true,
-      rtl: true,
-      dotsClass: "gallery-dots"
-    };
+
+    const images = getAll(require.context('../assets/image/services', true, /\.(png|jpe?g|webp)$/))
+    
+    const [data, setData] = React.useState({})
+
+    React.useEffect( async () => {
+        axios.get('http://localhost:8000')
+            .then((res) => {
+                console.log(res)
+            })
+        // await fetch('http://localhost:8000/api')
+        // .then((response) => {
+        //     if (response.status !== 200) {
+        //         console.log('Looks like there was a problem. Status Code: ' +
+        //         response.status);
+        //         return;
+        //     }
+
+        //     response.json().then((data) => {
+        //         console.log(data);
+        //     });
+        //     }
+        // )
+        // .catch((err) => {
+        //     console.log('Fetch Error :-S', err);
+        // });
+    }, [])
+
     return (
         <div className='slider' id="services">
             <Slider {...settingsServices}>
-                <div className="services--item">
-                    <div className="services--item_description">
-                        <h5>Чёрное пламя</h5>
-                        <p>Верую во единаго Бога Отца, Вседержителя, Творца небу и земли, видимым же всем и невидимым.	 
-И во единаго Господа Иисуса Христа, Сына Божия, Единороднаго, Иже от Отца рожденнаго прежде всех век; Света от Света, Бога истинна от Бога истинна, рожденна, несотворенна, единосущна Отцу, Имже вся быша.</p>
-                    </div>
-                    <div className="services--item_gallery">
-                        <Slider {...settingsGallery}>
-                            <div>
-                                <h3>1</h3>
-                            </div>
-                            <div>
-                                <h3>2</h3>
-                            </div>
-                            <div>
-                                <h3>3</h3>
-                            </div>
-                        </Slider>
-                    </div>
-                </div>
-                <div className="services--item">
-                    <div className="services--item_description">
-                        <h5>Чёрное пламя</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ab unde possimus facilis magnam architecto eligendi, hic temporibus sit ad repellat nisi, cupiditate tempore iusto vel, alias et doloribus placeat.</p>
-                    </div>
-                    <div className="services--item_gallery">
-                        <Slider />
-                    </div>
-                </div>
-                <div className="services--item">
-                    <div className="services--item_description">
-                        <h5>Чёрное пламя</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ab unde possimus facilis magnam architecto eligendi, hic temporibus sit ad repellat nisi, cupiditate tempore iusto vel, alias et doloribus placeat.</p>
-                    </div>
-                    <div className="services--item_gallery">
-                        <Slider />
-                    </div>
-                </div>
+                {
+                    // servicesJSON.map((el, index) => {
+                    //     return (
+                    //     <ServiceItem 
+                    //         title={el.title}
+                    //         description={el.description}
+                    //         path={el.path}
+                    //         key={`servise--item_${index}`}/>
+                    //     )
+                    // })
+                }
             </Slider>
         </div>
     )
