@@ -1,14 +1,34 @@
 import classNames from 'classnames';
 import React from 'react'
-import {Link, animateScroll as scroll} from 'react-scroll'
+import {Link, animateScroll} from 'react-scroll'
 
 import logo from '../assets/icon/logo.svg'
 
-const Header = ({offset}) => {
-    const scrollToTop = () => scroll.scrollToTop();
+const Header = () => {
+    const [scroll, setScroll] = React.useState(false);
+    React.useEffect(() => {
+        document.addEventListener('scroll', toggleScroll)
+
+        return () => {
+        document.removeEventListener('scroll', toggleScroll)
+        }
+    }, [])
+
+    const toggleScroll = (e) => {
+        if(e.target.documentElement.scrollTop <= 40) {
+        return setScroll(false)
+        } else if(e.target.documentElement.scrollTop > 700) {
+        return setScroll("all")
+        } else {
+        return setScroll("head")
+        }
+    }
+
+    const scrollToTop = () => animateScroll.scrollToTop();
 
     return (
-        <header className={classNames({'scrolled': offset>=50})}>
+        <>
+        <header className={scroll === 'head' | scroll === 'all' ? 'scrolled' : null}>
             <div className="container">
                 <div className="logo" onClick={scrollToTop}>
                     <img src={logo} alt="Viva-logotype" />
@@ -34,6 +54,12 @@ const Header = ({offset}) => {
                 <div className='phone'>+7 (922) 888 05 55</div>
             </div>
         </header>
+        <div className={classNames('bg-container', {'bg-scrolled': scroll === "all"})}>
+            <div className="container">
+            <h2>В 2021 году великий маг Всеросии увёл войско за ворота.</h2>
+            </div>
+        </div>
+        </>
     )
 }
 

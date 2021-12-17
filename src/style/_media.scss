@@ -1,0 +1,70 @@
+@media all and (max-width: 768px){
+    .bg-container{
+        height: 105vh;
+        h2{
+            font-size: 34px !important;
+            width: 80%;
+            text-align: center;
+        }
+    }
+    header{
+        .nav{
+            display: none !important;
+        }
+        .phone{
+            display: none !important;
+        }
+        .container{
+            justify-content: center !important;
+            .logo{
+                align-items: center !important;
+                h1{
+                    width: 100px !important;
+                    @include transform (translateY(2px) !important);
+                }
+            }
+        }
+        .scrolled{
+        background-color: #000;
+        height: 10.5vh !important;
+            img{
+                width: 110px !important;
+            }
+            h1{
+                line-height: 38px !important;
+                font-size: 30px;
+            }
+        }
+    }
+    .advantages{
+        flex-direction: column;
+        &--item{
+            margin-bottom: 40px;
+        }
+    }
+    .types_main{
+        margin: 72vh 0 5vh;
+    }
+    h4{
+        width: 100% !important;
+    }
+    .types{
+        &--item{
+            margin-bottom: 84px !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+            text-align: center !important;
+            &:nth-child(2n) {
+                flex-flow: wrap !important;
+                text-align: center !important;
+            }
+            &_image{
+                height: 170px !important;
+                margin: 0 auto !important;
+            }
+            &_description{
+                width: 100% !important;
+            }
+        }
+    }
+}

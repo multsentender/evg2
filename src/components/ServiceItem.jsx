@@ -18,7 +18,7 @@ const settingsGallery = {
 }
 
 
-const ServiceItem = ({title, description, path}) => {
+const ServiceItem = ({title, description, images}) => {
     return (
         <div className="services--item">
             <div className="services--item_description">
@@ -27,11 +27,13 @@ const ServiceItem = ({title, description, path}) => {
             </div>
             <div className="services--item_gallery">
                 <Slider {...settingsGallery}>
-                    {/* {images.map((el, index) => {
-                        <div className="gallery--item">
-                            <img src={el} alt="service" />
-                        </div>
-                    })} */}
+                    {images && 
+                        images.map((el, index) => {
+                            console.log(el)
+                        return <div className="gallery--item" key={`images--${index}`}>
+                                    <img src={`~back/${el}`} alt="service" />
+                                </div>
+                    })}
                 </Slider>
             </div>
         </div>

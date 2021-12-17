@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
 const getFiles = (dirPath, callback) => {
     fs.readdir(dirPath, function (err, files) {
         if (err) return callback(err);
-
         let filePaths = [];
         async.eachSeries(files, function (fileName, eachCallback) {
             let filePath = path.join(dirPath, fileName);
@@ -36,7 +35,7 @@ const getFiles = (dirPath, callback) => {
                     });
 
                 } else {
-                    if (stat.isFile() && /\.js$/.test(filePath)) {
+                    if (stat.isFile() && /\.png || \.jpg || \.webp || \.js || \.jpeg$/.test(filePath)) {
                         filePaths.push(filePath);
                     }
 
