@@ -16,16 +16,9 @@
     "slick-carousel": "^1.8.1",
     "web-vitals": "^1.1.2"
   },
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:8000"
-    }
-   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "server": "npm run start --prefix back",
-    "dev": "concurrently \"npm run server\" \"npm start\"" 
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [

@@ -49,7 +49,7 @@ const Services = () => {
 
 
     React.useEffect( () => {
-        fetch('/api')
+        fetch('http://localhost:5000')
         .then((response) => {
             if (response.status !== 200) {
                 console.log('Looks like there was a problem. Status Code: ' +

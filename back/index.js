@@ -1,16 +1,20 @@
 const express = require('express')
+const path = require('path')
+
 const router = require('./router')
 
 const app = express()
+const PORT = 5000
 
-app.use(function(req, res, next) {
+app.use((_, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-
+app.use(express.json())
+app.use('/uploads', express.static(path.resolve(__dirname, 'uploads'), ))
 app.use('/', router)
 
-app.listen(8000, () => {
-    console.log(8000, 'Server has been starter')
+app.listen(PORT, () => {
+    console.log(PORT, 'Server has been starter')
 })

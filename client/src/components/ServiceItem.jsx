@@ -31,7 +31,7 @@ const ServiceItem = ({title, description, images}) => {
                         images.map((el, index) => {
                             console.log(el)
                         return <div className="gallery--item" key={`images--${index}`}>
-                                    <img src={`~back/${el}`} alt="service" />
+                                    <img src={`http://localhost:5000/${el}`} alt="service" />
                                 </div>
                     })}
                 </Slider>

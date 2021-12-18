@@ -22,7 +22,6 @@ const getFiles = (dirPath, callback) => {
         let filePaths = [];
         async.eachSeries(files, function (fileName, eachCallback) {
             let filePath = path.join(dirPath, fileName);
-
             fs.stat(filePath, function (err, stat) {
                 if (err) return eachCallback(err);
 
