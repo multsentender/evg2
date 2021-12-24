@@ -1,12 +1,13 @@
 import React from "react"
-import {Header, TypesMain, OtherMain} from './modules'
-
+import {Header, TypesMain, OtherMain, Footer} from './modules'
+const visible = true
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <TypesMain/>
-      <OtherMain/>
+        <Header/>
+        <TypesMain/>
+        <OtherMain/>
+        <Footer/>
     </div>
   );
 }

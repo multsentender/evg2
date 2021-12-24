@@ -37,7 +37,7 @@ const Services = () => {
     const convert = (arr) => {
         const imgObj = {}
         arr.forEach((el, i) => {
-          const key = el.split('/')[1]
+          const key = el.split('\\')[1]
           if (key in imgObj) {
             imgObj[key].push(el)
           } else {
@@ -46,7 +46,6 @@ const Services = () => {
         });
         setImages(imgObj)
     }
-
 
     React.useEffect( () => {
         fetch('http://localhost:5000')
@@ -60,7 +59,7 @@ const Services = () => {
             response.json().then((json) => {
                 setData(json.data)
                 convert(json.uploads)
-                return
+                return;
             });
             }
         )
@@ -68,7 +67,6 @@ const Services = () => {
             console.log('Fetch Error :-S', err);
         });
     }, [])
-
 
 
     return (
