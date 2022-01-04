@@ -3,11 +3,12 @@
         height: 105vh;
         h2{
             font-size: 34px !important;
-            width: 80%;
-            text-align: center;
+            width: 80% !important;
+            text-align: center !important;
         }
     }
     header{
+        height: 13vh !important;
         .nav{
             display: none !important;
         }
@@ -65,6 +66,83 @@
             &_description{
                 width: 100% !important;
             }
+        }
+    }
+    .contact{
+        height: 87.5vh !important;
+
+
+        .card-wrapper{
+
+            .c1{
+                span{
+                    font-size: 30px !important;
+                    line-height: 36px !important;
+                }
+                span::after{
+                    height: 6px !important;
+                }
+            }
+            .card-info__wrapper{
+
+                p{
+                    font-size: 14px !important;
+                    span{
+                        font-size: 16px !important;
+                    }
+                }
+
+                &-bottom{
+
+                }
+            }
+
+            .whatsApp{
+                top: 80px !important;
+
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px){
+
+    footer{
+
+        .card-wrapper{
+
+            .c1{
+                span{
+                    font-size: 26px !important;
+                    line-height: 40px;
+
+                }
+                span::after{
+                    height: 6px !important;
+                }
+            }
+            .card-info__wrapper{
+
+                p{
+                    font-size: 12px !important;
+                    letter-spacing: 2px !important;
+                    line-height: 20px !important;
+                    span{
+                        font-size: 14px !important;
+                    }
+                }
+
+                &-bottom{
+
+                }
+            }
+
+
+        }
+        .whatsApp{
+            top: 75px !important;
+            right: 50px !important;
+
         }
     }
 }
