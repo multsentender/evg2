@@ -56,7 +56,7 @@ const Header = () => {
         </header>
         <div className={classNames('bg-container', {'bg-scrolled': scroll === "all"})}>
             <div className="container">
-            <h2>В 2021 году великий маг Всеросии увёл войско за ворота.</h2>
+                <h2>В 2021 году великий маг Всеросии увёл войско за ворота.</h2>
             </div>
         </div>
         </>
