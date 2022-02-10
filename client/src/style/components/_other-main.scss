@@ -27,309 +27,123 @@
         }
     }
 }
-.slider{
-    width: 100%;
-    color: $white;
-    padding: 20px 0 60px;
-    position: relative;
-    .services-dots{
-        position: absolute;
-        left: -30px;
-        bottom: 40px;
-        padding: 6px 10px;
-        background-color: #fff;
-        border-radius: 3px;
-        z-index: 2;
-        li{
-            text-decoration: none;
-            width: 22px;
-            height: 22px;
-            margin: 13px 5px;
-            position: relative;
-            transition: all .45s linear;
-        }
-        .slick-active{
-            transform: scale(1.3);
-        }
-        button{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            font-size: 0;
-            overflow: hidden;
-            white-space: nowrap;
-            text-indent: 100%;
-            width: 60%;
-            height: 60%;
-            border: none;
-            border-radius: 0;
-            background-color: $accent;
-            transform: translate(-50%, -50%) rotate(45deg);
-            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.45);
-        }
-    }
-    .slick-arrow{
-        position: absolute;
-        top: 50%;
-        width: 50px;
-        height: 50px;
-        background: $accent !important;
-        z-index: 2;
-        img{
-            width: 70%;
-            height: 70%;
-        }
-        &::before{
-            content: '';
-        }
-    }
-    .slick-prev{
-        left: 0;
-        @include transform(translate(calc(-50% + 2px), -50%) rotate(135deg));
-        img{
-            @include transform(translate(50%, 50%) rotate(-45deg));
-        }
-    }
-    .slick-next{
-        right: 0;
-        @include transform(translate(calc(50% - 2px), -50%) rotate(-45deg));
-        img{
-            @include transform(translate(50%, 50%) rotate(-45deg));
-        }
-    }
-}
-.services--item{
-    height: 80vh;
-    width: 100%;
-    background-color: $dark;
-    position: relative;
-    border-radius: 3px;
-    overflow: hidden;
-    &_description{
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 42%;
-        border-radius: 0 12px 12px 0;
-        background-color: rgba(221, 221, 221, 0.7);
-        padding: 2.2rem 1rem 2rem 2.9rem;
-        box-shadow: 8px 0 12px #232225cc;
-        color: $dark;
-        z-index: 1;
-        backdrop-filter: blur(8px);
-        h5{
-            font-size: 42px;
-            letter-spacing: 5px;
-            margin: 50px 0 20px;
-        }
-        p{
-            font-size: 20px;
-            letter-spacing: 1px;
-            line-height: 30px;
-        }
-    }
-    &_gallery{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        & div{
-            height: 100%;
-            display: block;
-            position: relative;
-            .slick-track div{
-                height: 100%;
-            }
-        }
-        .gallery--item{
-            width: 100%;
-            height: 100%;
-            img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-}
-.contact{
-    height: 89.5vh;
+
+.footer{
+    height: 89.5vmin;
     background: rgb(2,0,36);
     background: linear-gradient(135deg, rgba(25,133,161,1) 0%, rgba(0,215,162,1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
 
-    &-wrapper{
+    .card{
+        width: 560px;
+        aspect-ratio: 7 / 4;
         background-color: $dark;
-        width: 760px;
         margin: 20px;
         border-radius: 14px;
         position: relative;
+        overflow: hidden;
         -webkit-box-shadow: 0px 24px 16px -5px rgba(34, 60, 80, 0.45);
         -moz-box-shadow: 0px 24px 16px -5px rgba(34, 60, 80, 0.45);
         box-shadow: 0px 24px 16px -5px rgba(34, 60, 80, 0.45);
+        display: grid;
+        grid-template-columns: 45% 55%;
+    }
 
-        .whatsApp{
-            position: absolute;
-            right: 65px;
-            top: 85px;
-            transform: translateY(-100%);
-            display: flex;
-            align-items: center;
-            background-color: transparent;
-            color: $accent;
-            border-radius: 8px 8px 0px 0px;
+    .card__info{
+        padding: 20px;
+        position: relative;
+    }
 
-            &:hover div{
-                right: -30px;
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
-            }
-            &:hover svg{
-                fill: rgba(0,215,162,1);
-                pointer-events: auto;
-            }
-
-            div{
-                position: absolute;
-                right: -40px;
-                font-size: 14px;
-                background-color: transparent;
-                color: white;
-                font-weight: bold;
-                padding: 5px 8px;
-                border-radius: 5px;
-                opacity: 0;
-                pointer-events: none;
-                transform: translateX(-100%);
-                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-            }
-            svg{
-                fill: $accent;
-                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
+    .card__map{
+        overflow: hidden;
+        position: relative;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        .map{
+            width: 500px;
+            height: 400px;
         }
-        &--inner{
-            position: relative;
-            height: 0;
-            border: none;
-            padding-top: 56.5%;
-            overflow: hidden;
+    }
 
-            .card{
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                transition: all .6s ease;
-                .card-wrapper{
-                    position: relative;
-                }
-                &-info{
-                    .card-wrapper{
-                        height: 100%;
-                        display: grid;
-                        grid-template-columns: repeat(5, 1fr);
-                        grid-template-rows: 87% 13%;
-                        padding: 20px;
+    .whatsApp{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        cursor: default;
+        &__icon{
+            cursor: pointer;
+            fill: $accent;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-                        .c1{
-                            grid-area: 1/1/2/4;
-                            padding: 10% 12%;
-                            span{
-                                position: relative;
-                                letter-spacing: 3px;
-                                line-height: 40px;
-                                color: $accent;
-                                font-size: 42px;
-                                font-weight: 700;
-                                &::after{
-                                    content: '';
-                                    position: absolute;
-                                    bottom: -26px;
-                                    left: 0;
-                                    width: 30%;
-                                    height: 8px;
-                                    background: linear-gradient(-45deg, rgba(25,133,161,1) 35%, rgba(0,215,162,1) 100%);
-                                    border-radius: 3px;
-                                }
-                            }
-                        }
-                        .card-info__wrapper {
-                            grid-area: 1/4/2/6;
-                            padding: 0 15% 18% 0;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: flex-end;
-                            gap: 20px;
-
-                            p {
-                                text-align: right;
-                                color: #d3d0d0;
-                                font-size: 16px;
-                                letter-spacing: 2px;
-                                line-height: 25px;
-
-                                span {
-                                    color: #fff;
-                                    font-size: 18px;
-                                    letter-spacing: 1px;
-                                }
-                            }
-
-                            a {
-                                color: #d3d0d0;
-                            }
-                        }
-                        .card-info__wrapper-bottom{
-                            grid-area: 2/1/3/6;
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            b{
-                                margin-left: 20px;
-                                color: #d3d0d0;
-                                letter-spacing: 4px;
-                                text-transform: uppercase;
-                                font-size: 14px;
-                                }
-                            .open-map_btn{
-                                color: $accent;
-                                border: none;
-                                background: transparent;
-                                margin-right: 6%;
-                                font-size: 18px;
-                                font-weight: 700;
-                                text-transform: uppercase;
-                                cursor: pointer;
-                            }
-                        }
-                    }
-                }
-                &-map{
-                    left: 100%;
-                }
-                .visible-map{
-                    transform: translateX(0) !important;
-                }
+            &:hover {
+                fill: rgba(0,215,162,1);
             }
         }
     }
-}
 
+    // Text
 
-.hidden-info{
-    left: -100% !important;
-}
-.visible-map{
-    left: 0 !important;
+    &__title{
+        color: $accent;
+        font-size: 36px;
+        line-height: 36px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        background: linear-gradient(-45deg, rgba(25,133,161,1) 35%, rgba(0,215,162,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            width: 50px;
+            height: 8px;
+            background: linear-gradient(-45deg, rgba(25,133,161,1) 5%, rgba(0,215,162,1) 100%);
+            border-radius: 3px;
+        }
+    }
+
+    .card__contacts{
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        p {
+            text-align: right;
+            color: #d3d0d0;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            line-height: 25px;
+
+            span {
+                color: #fff;
+                font-size: 16px;
+                letter-spacing: 0;
+                font-weight: 500;
+            }
+        }
+        a {
+            color: #d3d0d0;
+        }
+    }
+
+    .card__other{
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        b{
+            color: #d3d0d0;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+    }
 }

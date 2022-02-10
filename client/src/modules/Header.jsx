@@ -37,14 +37,14 @@ const Header = () => {
                 <ul className="nav">
                     <li className="nav--item" onClick={scrollToTop}>Главная</li>
                     <li className="nav--item">
-                        <Link 
+                        <Link
                             to="services"
                             smooth={true}
                             duration={550}>Услуги
                         </Link>
                     </li>
                     <li className="nav--item">
-                        <Link 
+                        <Link
                             to="contacts"
                             smooth={true}
                             duration={550}>Контакты

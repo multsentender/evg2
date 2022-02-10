@@ -7,7 +7,7 @@ import testImage from '../assets/image/bg_2.png'
 const Main = () => {
     return (
         <main className="types_main">
-            <Link 
+            <Link
                 to="types"
                 smooth={true}
                 duration={1000}
@@ -17,8 +17,8 @@ const Main = () => {
                 </div>
             </Link>
             <div className="container">
-                <h4>Ворота за великим магом закрыли. Ворота за великим магом открыли. 
-                    Ворота за великим магом закрыли.  
+                <h4>Ворота за великим магом закрыли. Ворота за великим магом открыли.
+                    Ворота за великим магом закрыли.
                     Ворота за великим магом открыли. Или нет?</h4>
                 <div id='types' className="types">
                     <div className="types--item">

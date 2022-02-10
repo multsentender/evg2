@@ -1,34 +1,5 @@
 import React from 'react'
-import Slider from 'react-slick'
 import { ServiceItem } from '.'
-
-import arrow from '../assets/icon/arrow.svg'
-
-const ArrowBtn = ({className, style, onClick}) => {
-    return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
-      onClick={onClick}>
-          <img src={arrow} alt="arrow" />
-      </div>
-  );
-}
-
-const settingsServices = {
-  dots: true,
-  infinite: true,
-  speed: 800,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  lazyLoad: false,
-  dotsClass: "services-dots",
-  vertical: true,
-  verticalSwiping: true,
-  prevArrow: <ArrowBtn/>,
-nextArrow: <ArrowBtn/>
-};
-
 
 const Services = () => {
     const [data, setData] = React.useState([])
@@ -71,19 +42,7 @@ const Services = () => {
 
     return (
         <div className='slider' id="services">
-            <Slider {...settingsServices}>
-                {
-                    data.map((el, index) => {
-                        return (
-                        <ServiceItem
-                            title={el.title}
-                            description={el.description}
-                            images={images[el.path]}
-                            key={`servise--item_${index}`}/>
-                        )
-                    })
-                }
-            </Slider>
+
         </div>
     )
 }
