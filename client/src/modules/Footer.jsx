@@ -4,7 +4,7 @@ import {YMaps, Map, Placemark} from 'react-yandex-maps'
 
 const Footer = () => {
     return (
-        <footer className='footer'>
+        <footer className='footer' id='contacts'>
             <div className='card'>
                 <div className={'card__info'}>
                     <h2 className='footer__title'>Наши <br/> контакты</h2>
@@ -12,6 +12,7 @@ const Footer = () => {
                         <p>Телефон: <br/><span>+7 (922) 888 05 55</span></p>
                         <p>Адрес: <br/><span>ул. Поляничко 689</span></p>
                     </div>
+
                     <div className="card__other">
                         {/* TODO исправить ссылку на WhatsUp */}
                         <a href='https://wa.me/79068334482' className='whatsApp'>
