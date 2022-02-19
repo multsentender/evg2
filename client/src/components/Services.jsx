@@ -1,15 +1,12 @@
 import React from 'react'
-import Carousel  from 'nuka-carousel'
-import { ServiceItem } from '.'
+import { Carousel } from 'react-responsive-carousel';
 
-import arrow from '../assets/icon/arrow.svg'
+import { ServiceItem } from '.'
 
 const Services = () => {
     // TODO оптимизация (тройной рендер)
     const [data, setData] = React.useState([])
     const [images, setImages] = React.useState({})
-
-    console.log(images);
 
     const convert = (arr) => {
         const imgObj = {}
@@ -52,24 +49,18 @@ const Services = () => {
     return (
         <div className='services' id="services">
             <Carousel
-                className='carousel services__carousel'
-                vertical
-                dragging={false}
-                defaultControlsConfig={{
-                    pagingDotsClassName: "carousel__dots",
-                    nextButtonText: ' ',
-                    prevButtonText: ' ',
-                    nextButtonClassName: "carousen__button carousen__button--next",
-                    prevButtonClassName: "carousen__button carousen__button--prev"
-                }}>
+                axis='vertical'
+                ariaLabel='Услуги нашей компании'
+                infiniteLoop
+                >
                 {
                     data.map((el, index) => {
                         return (
-                        <ServiceItem
-                            title={el.title}
-                            description={el.description}
-                            images={images[el.path]}
-                            key={`servise--item_${index}`}/>
+                            <ServiceItem
+                                title={el.title}
+                                description={el.description}
+                                images={images[el.path]}
+                                key={`servece--item_${index}`}/>
                         )
                     })
                 }

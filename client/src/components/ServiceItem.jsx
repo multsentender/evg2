@@ -1,24 +1,23 @@
 import React from 'react'
-import Carousel  from 'nuka-carousel'
+import { Carousel } from 'react-responsive-carousel';
 
 const ServiceItem = ({title, description, images}) => {
     return (
         <div className="services--item">
-            <div className="services--item_description">
-                <h5>{title}</h5>
-                <p>{description}</p>
+            <div className="services__info">
+                <h5 className='services__title'>{title}</h5>
+                <p className='services__description'>{description}</p>
             </div>
-            <div className="services--item_gallery">
-                <Carousel
-                    className='carousel services--item__carousel'
-                    autoplay
-                    autoplayReverse
-                    withoutControls>
-                    {images &&
-                        images.map((el, index) => {
-                            // TODO прописать proxy
-                        return <img src={`http://localhost:5000/${el}`} className='gallery--item' alt="service" />})}
-                </Carousel>
+            <div className="services__gallery">
+                {/* <Carousel
+                    autoPlay
+                    interval={2500}
+                    infiniteLoop
+                    dynamicHeight
+                    >
+                    {
+                        images && images.map(el => <img src={`http://localhost:5000/${el}`} className='gallery--item' alt="service" key={`image__${el}`} />)}
+                </Carousel> */}
             </div>
         </div>
     )

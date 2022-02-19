@@ -6,7 +6,7 @@ const OtherMain = () => {
         <main className="other_main">
             <div className="container">
                 <Advantages/>
-                {/*<Services/>*/}
+                <Services/>
             </div>
         </main>
     )
